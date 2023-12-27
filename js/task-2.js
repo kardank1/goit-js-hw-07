@@ -30,18 +30,16 @@ const images = [
 
 
 const gallery = document.querySelector(".gallery");
-console.log(gallery)
 const liTemp = [];
-const imgTemp = [];
+let imgTemp;
 
 for( let i = 0; i < images.length; i++){
   liTemp.push(document.createElement("li"));
-  imgTemp.push(document.createElement("img"));
+  imgTemp = document.createElement("img");
   liTemp[i].setAttribute("class", "gallery-item");
-  imgTemp[i].setAttribute("url", images[i].url);
-  imgTemp[i].setAttribute("alt", images[i].alt);
-  imgTemp[i].setAttribute("class", "gallery-image");
-  liTemp[i].insertAdjacentElement("afterbegin", imgTemp[i]);
-  console.log(imgTemp[i])
+  imgTemp.setAttribute("src", images[i].url);
+  imgTemp.setAttribute("alt", images[i].alt);
+  imgTemp.setAttribute("class", "gallery-image");
+  liTemp[i].insertAdjacentElement("afterbegin", imgTemp);
 }
 gallery.append(...liTemp);
