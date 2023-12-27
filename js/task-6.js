@@ -8,11 +8,7 @@ createButton.addEventListener("click", event => {
   }
 });
 
-destroyButton.addEventListener("click", event => {
-  if(input.value  > 0 && input.value < 101){
-    destroyBoxes(input.value);
-  }
-});
+destroyButton.addEventListener("click", destroyBoxes);
 
 
 function destroyBoxes(){
